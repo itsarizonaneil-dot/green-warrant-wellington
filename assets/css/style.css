@@ -615,6 +615,9 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   .coverage-grid { grid-template-columns: 1fr; }
   .coverage-map { min-height: 260px; }
   .coverage-item { padding: 14px 18px; }
+  .step-head { display: flex; align-items: center; gap: 14px; }
+  .step-head .step-num { margin-bottom: 0; flex-shrink: 0; }
+  .step-head h3 { margin-bottom: 0; }
 }
 @media (max-width: 560px) {
   .footer-grid { grid-template-columns: 1fr; }
