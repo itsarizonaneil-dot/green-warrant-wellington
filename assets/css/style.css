@@ -619,7 +619,8 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 @media (max-width: 560px) {
   .footer-grid { grid-template-columns: 1fr; }
   .section { padding: 60px 0; }
-  .page-hero { padding: 130px 0 48px; }
+  .hero { padding-top: 190px; }
+  .page-hero { padding: 190px 0 48px; }
   .urgency { flex-direction: column; }
   .hero-form-card { padding: 24px 20px; }
 }
