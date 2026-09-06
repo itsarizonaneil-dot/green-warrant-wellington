@@ -286,12 +286,41 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   box-shadow: 0 24px 60px rgba(0,0,0,0.28);
 }
 .hero-form-card h3 { margin-bottom: 4px; }
-.hero-form-card .form-sub { color: var(--ink-soft); font-size: 0.86rem; margin-bottom: 18px; }
+.form-sub { color: var(--ink-soft); font-size: 0.86rem; margin-bottom: 18px; }
 .hero-form-card .form-row { margin-bottom: 12px; }
 .hero-form-card .form-row input,
 .hero-form-card .form-row select { padding: 11px 13px; }
 .hero-form-card .form-note { text-align: center; }
 .hero-form-card .form-note a { color: var(--green); font-weight: 600; }
+
+/* Quote form enticements: urgency badge + reassurance line, used on every quote form */
+.form-urgency {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-head);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--amber-dark);
+  background: #fdf3de;
+  padding: 5px 10px;
+  margin-bottom: 12px;
+}
+.form-urgency i { color: var(--amber-dark); }
+.form-reassure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-align: center;
+}
+.form-reassure i { color: var(--green); flex-shrink: 0; }
 .scroll-cue {
   position: absolute;
   bottom: 26px; left: 50%;
