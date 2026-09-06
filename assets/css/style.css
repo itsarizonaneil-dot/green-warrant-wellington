@@ -241,7 +241,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding-top: 90px;
+  padding: 110px 0 100px;
   background: linear-gradient(160deg, var(--green-darker) 0%, var(--green-dark) 45%, var(--green) 100%);
   color: var(--white);
   position: relative;
