@@ -9,7 +9,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%23157a42'/%3E%3Ctext x='12' y='17' font-size='13' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EGW%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -46,11 +46,33 @@
   </header>
 
   <section class="page-hero">
-    <div class="container">
-      <p class="breadcrumb"><a href="index.html">Home</a> / Self-Containment Certification</p>
-      <span class="eyebrow">Core Service</span>
-      <h1>Self-Containment Certification, Wellington</h1>
-      <p class="lead">Everything you need to know about getting your campervan or motorhome green-warrant certified — what's checked, what it costs, and how booking works.</p>
+    <div class="container page-hero-inner">
+      <div class="page-hero-copy">
+        <p class="breadcrumb"><a href="index.html">Home</a> / Self-Containment Certification</p>
+        <span class="eyebrow">Core Service</span>
+        <h1>Self-Containment Certification, Wellington</h1>
+        <p class="lead">Everything you need to know about getting your campervan or motorhome green-warrant certified — what's checked, what it costs, and how booking works.</p>
+      </div>
+      <div class="hero-form-card">
+        <h3>Get a Free Quote</h3>
+        <p class="form-sub">Tell us your vehicle and suburb — we'll be in touch with your nearest inspection slot.</p>
+        <form action="mailto:enquiries@greenwarrantwellington.co.nz" method="post" enctype="text/plain">
+          <div class="form-row">
+            <label for="hero-name">Name *</label>
+            <input type="text" id="hero-name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label for="hero-phone">Phone Number *</label>
+            <input type="tel" id="hero-phone" name="phone" required autocomplete="tel">
+          </div>
+          <div class="form-row">
+            <label for="hero-suburb">Suburb / Area *</label>
+            <input type="text" id="hero-suburb" name="suburb" placeholder="e.g. Lower Hutt, Porirua, Kāpiti Coast" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Get a Free Quote</button>
+          <p class="form-note">Prefer to talk it through? <a href="tel:">Call [Phone Number]</a></p>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -190,7 +212,7 @@
         <span>&copy; 2026 Green Warrant Wellington. All rights reserved.</span>
         <span>Wellington, New Zealand</span>
       </div>
-      <p class="disclosure">Green Warrant Wellington is an independent referral and booking service. Vehicle self-containment inspections and certification are carried out by a licensed PGDB-authorised Certification Authority, not by Green Warrant Wellington. <span class="pending">Certifying partner details to be added once confirmed.</span></p>
+      <p class="disclosure">Enquiries submitted through this website are passed on to a licensed, insured local vendor, who will contact you using the details you provide.</p>
     </div>
   </footer>
 
