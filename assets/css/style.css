@@ -225,13 +225,13 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   .main-nav ul { flex-direction: column; gap: 14px; align-items: stretch; text-align: left; }
   .header-cta .call-btn span.call-text { display: none; }
   .nav-toggle { display: flex; align-items: center; justify-content: center; }
-  .dropdown-menu {
+  .main-nav .dropdown-menu {
     position: static;
     opacity: 1; visibility: visible; transform: none;
     box-shadow: none; border: none; padding: 6px 0 0 14px;
     margin-top: 8px; display: none;
   }
-  .has-dropdown.open .dropdown-menu { display: block; }
+  .main-nav .has-dropdown.open .dropdown-menu { display: flex; }
   .has-dropdown > a i { margin-left: auto; }
   .has-dropdown.open > a i { transform: rotate(180deg); }
 }
