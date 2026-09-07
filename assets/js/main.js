@@ -48,6 +48,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Point Formspree's post-submit redirect at the current origin's thank-you
+  // page, so it works correctly on localhost/Vercel previews/production
+  // alike instead of a hardcoded domain that may not match where the form
+  // was actually submitted from
+  document.querySelectorAll('input[name="_next"]').forEach(function (input) {
+    input.value = window.location.origin + '/thank-you.html';
+  });
+
   // Header shadow on scroll
   var header = document.querySelector('.site-header');
   if (header) {
