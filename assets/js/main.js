@@ -10,13 +10,20 @@ document.addEventListener('DOMContentLoaded', function () {
       toggle.setAttribute('aria-expanded', isOpen);
       if (icon) icon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
     });
+    var closeNav = function () {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      var icon = toggle.querySelector('i');
+      if (icon) icon.className = 'fa-solid fa-bars';
+    };
     nav.querySelectorAll('a:not(.dropdown-toggle)').forEach(function (link) {
-      link.addEventListener('click', function () {
-        nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        var icon = toggle.querySelector('i');
-        if (icon) icon.className = 'fa-solid fa-bars';
-      });
+      link.addEventListener('click', closeNav);
+    });
+    // Close the menu when tapping/clicking outside it
+    document.addEventListener('click', function (e) {
+      if (!nav.classList.contains('open')) return;
+      if (nav.contains(e.target) || toggle.contains(e.target)) return;
+      closeNav();
     });
   }
 

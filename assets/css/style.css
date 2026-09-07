@@ -208,8 +208,8 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 /* Mobile nav */
 @media (max-width: 900px) {
   .main-nav {
-    position: fixed;
-    top: 70px; left: 0; right: 0;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
     background: var(--white);
     border-bottom: 1px solid var(--border);
     flex-direction: column;
