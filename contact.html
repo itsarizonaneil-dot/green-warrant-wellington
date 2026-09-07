@@ -32,10 +32,7 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="brand">
-        <span class="brand-icon"><i class="fa-solid fa-shield-halved"></i></span>
-        <span>Green Warrant Wellington<span class="sub">Self-Containment Certification</span></span>
-      </a>
+      <a href="tel:+6449749478" class="header-phone"><i class="fa-solid fa-phone"></i><span>04 974 9478</span></a>
       <nav class="main-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -53,10 +50,7 @@
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
       </nav>
-      <div class="header-cta">
-        <a href="tel:+6449749478" class="call-btn"><i class="fa-solid fa-phone"></i><span class="call-text">04 974 9478</span></a>
-        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
-      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     </div>
   </header>
 
@@ -74,27 +68,37 @@
       <div class="grid-2" style="align-items:start; gap:44px;">
 
         <div class="form-card" id="enquiry">
-          <span class="form-urgency"><i class="fa-solid fa-bolt"></i> Blue warrants no longer valid — get certified now</span>
-          <h3>Get a Free Quote</h3>
+          <div class="quote-badge">
+            <svg class="quote-badge-shape" viewBox="0 0 600 240" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M30 8 H570 Q588 8 588 26 V176 L300 232 L12 176 V26 Q12 8 30 8 Z" fill="#ffffff" stroke="#0a3f24" stroke-width="9" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+              <path d="M48 28 H552 Q566 28 566 42 V164 L300 216 L34 164 V42 Q34 28 48 28 Z" fill="none" stroke="#7fb84e" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+            </svg>
+            <div class="quote-badge-text">
+              <span class="quote-badge-kicker">Free Instant Quote</span>
+              <span class="quote-badge-sub">Enter your details below</span>
+              <i class="fa-solid fa-arrow-down quote-badge-arrow" aria-hidden="true"></i>
+            </div>
+          </div>
+          <p class="form-required-note"><span class="req">*</span> indicates required field</p>
           <form action="https://formspree.io/f/mjyvabqv" method="POST">
             <input type="hidden" name="_subject" value="New Quote Enquiry - Green Warrant Wellington">
             <input type="hidden" name="_next" value="https://greenwarrantwellington.co.nz/thank-you.html">
             <input type="hidden" name="_cc" value="tannatemaari@gmail.com">
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-row">
-              <label for="name">Name *</label>
+              <label for="name">Name <span class="req">*</span></label>
               <input type="text" id="name" name="name" required autocomplete="name">
             </div>
             <div class="form-row">
-              <label for="phone">Phone Number *</label>
+              <label for="phone">Phone Number <span class="req">*</span></label>
               <input type="tel" id="phone" name="phone" required autocomplete="tel">
             </div>
             <div class="form-row">
-              <label for="email">Email *</label>
+              <label for="email">Email <span class="req">*</span></label>
               <input type="email" id="email" name="email" required autocomplete="email">
             </div>
             <div class="form-row">
-              <label for="vehicle">Vehicle Type *</label>
+              <label for="vehicle">Vehicle Type <span class="req">*</span></label>
               <select id="vehicle" name="vehicle_type" required>
                 <option value="" disabled selected>Select vehicle type</option>
                 <option value="Campervan">Campervan</option>
@@ -105,7 +109,7 @@
               </select>
             </div>
             <div class="form-row">
-              <label for="suburb">Suburb / Area *</label>
+              <label for="suburb">Suburb / Area <span class="req">*</span></label>
               <input type="text" id="suburb" name="suburb" placeholder="e.g. Lower Hutt, Porirua, Kāpiti Coast" required>
             </div>
             <div class="form-row">
@@ -113,7 +117,6 @@
               <textarea id="message" name="message" rows="4" placeholder="e.g Self-Containment Certification, Green Warrant Renewal, Retrofit"></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Send Enquiry</button>
-            <p class="form-reassure"><i class="fa-solid fa-lock"></i> No obligation — used only to arrange your inspection</p>
             <p class="form-note">We'll respond with next steps and available inspection times.</p>
           </form>
         </div>

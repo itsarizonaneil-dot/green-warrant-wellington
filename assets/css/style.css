@@ -72,6 +72,12 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .section-head { max-width: 680px; margin: 0 0 44px; }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 
+/* Full-width running text — ported from the redesign, for sections where the
+   copy should span the section rather than being held to a narrow measure */
+.prose { max-width: none; }
+.prose p { font-size: 1.02rem; }
+.prose u { text-decoration-color: var(--green); text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -86,8 +92,8 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
-.btn-primary { background: var(--amber); color: var(--green-darker); }
-.btn-primary:hover { background: var(--amber-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(224, 167, 38, 0.35); }
+.btn-primary { background: var(--green); color: var(--white); }
+.btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(21, 122, 66, 0.35); }
 .btn-outline { background: transparent; border-color: rgba(255,255,255,0.65); color: var(--white); }
 .btn-outline:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
 .btn-outline-green { background: transparent; border-color: var(--green); color: var(--green); }
@@ -131,6 +137,21 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   flex-shrink: 0;
 }
 .brand span.sub { display: block; font-family: var(--font-body); font-weight: 500; font-size: 0.68rem; color: var(--ink-soft); letter-spacing: 0.03em; }
+
+/* Nav-bar identity, matching the redesign — phone number stands in for the
+   logo/wordmark. .brand is left untouched above since the footer still uses it. */
+.header-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-head);
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-weight: 800;
+  color: var(--green-darker);
+  white-space: nowrap;
+}
+.header-phone i { color: var(--green); font-size: 0.78em; }
+.header-phone:hover { color: var(--green); }
 
 .main-nav { display: flex; align-items: center; gap: 28px; }
 .main-nav ul { display: flex; gap: 26px; }
@@ -177,22 +198,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 }
 .dropdown-menu a:hover { background: var(--green-light); border-color: transparent; }
 
-.header-cta { display: flex; align-items: center; gap: 14px; }
-.call-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-head);
-  font-weight: 600;
-  font-size: 0.92rem;
-  color: var(--green-darker);
-  border: 1.5px solid var(--green);
-  padding: 9px 16px;
-  border-radius: 0;
-  transition: background 0.15s;
-}
-.call-btn:hover { background: var(--green-light); }
-.call-btn i { color: var(--green); }
+/* .header-cta / .call-btn removed with the nav-bar redesign — .header-phone above replaces both */
 
 .nav-toggle {
   display: none;
@@ -223,7 +229,6 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   }
   .main-nav.open { transform: translateY(0); opacity: 1; }
   .main-nav ul { flex-direction: column; gap: 14px; align-items: stretch; text-align: left; }
-  .header-cta .call-btn span.call-text { display: none; }
   .nav-toggle { display: flex; align-items: center; justify-content: center; }
   .main-nav .dropdown-menu {
     position: static;
@@ -236,64 +241,64 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   .has-dropdown.open > a i { transform: rotate(180deg); }
 }
 
-/* Hero */
+/* Hero (experimental redesign treatment, 2026-09-08 — light/bordered, mounted
+   photo, quote-badge form framing, ported from the team's redesign draft) */
 .hero {
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  padding: 110px 0 100px;
-  background: linear-gradient(160deg, var(--green-darker) 0%, var(--green-dark) 45%, var(--green) 100%);
-  color: var(--white);
-  position: relative;
-  overflow: hidden;
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at 82% 18%, rgba(255,255,255,0.12), transparent 45%),
-                     radial-gradient(circle at 12% 85%, rgba(224,167,38,0.18), transparent 40%);
-  pointer-events: none;
+  padding: 110px 0 90px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
 }
 .hero-inner {
-  position: relative;
-  z-index: 1;
   width: 100%;
   display: grid;
-  grid-template-columns: 1.15fr 0.9fr;
-  gap: 48px;
-  align-items: center;
+  grid-template-columns: 2.05fr 1fr;
+  gap: 40px;
+  align-items: start;
 }
-.hero-copy { max-width: 560px; }
-.hero .eyebrow { background: rgba(255,255,255,0.14); color: var(--white); }
-.hero h1 { color: var(--white); }
-.hero p.lead { color: rgba(255,255,255,0.88); font-size: 1.12rem; max-width: 560px; }
+.hero-copy { text-align: center; }
+.hero-copy h1 { font-weight: 800; letter-spacing: -0.015em; }
+.hero-copy .cta-row { justify-content: center; }
+.hero-media {
+  margin: 26px 0 0;
+  border: 1px solid var(--ink);
+  background: var(--white);
+  padding: 10px;
+  aspect-ratio: 3 / 2;
+}
+.hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .hero-trust {
-  display: flex; flex-wrap: wrap; gap: 22px;
-  margin-top: 34px;
-  font-family: var(--font-head);
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.85);
+  margin: 20px 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 26px;
 }
-.hero-trust li { display: flex; align-items: center; gap: 8px; }
-.hero-trust i { color: var(--amber); }
+.hero-trust li { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--ink); font-weight: 600; }
+.hero-trust i { color: var(--green); flex-shrink: 0; }
 .hero-trust-note {
   margin-top: 18px;
   padding-top: 18px;
-  border-top: 1px solid rgba(255,255,255,0.16);
+  border-top: 1px solid var(--border);
   font-size: 0.92rem;
   line-height: 1.6;
-  color: rgba(255,255,255,0.75);
+  color: var(--ink-soft);
   max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-/* Hero quote form */
-.hero-form-card {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 28px 26px;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.28);
+/* Hero/quote form card — plain, no box; the quote-badge below does the framing */
+.hero-form-card, .form-card {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
 }
 .hero-form-card h3 { margin-bottom: 4px; }
 .form-sub { color: var(--ink-soft); font-size: 0.86rem; margin-bottom: 18px; }
@@ -304,22 +309,43 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .hero-form-card .form-note a { color: var(--green); font-weight: 600; }
 .form-card .form-note { text-align: center; }
 
-/* Quote form enticements: urgency badge + reassurance line, used on every quote form */
-.form-urgency {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+/* Quote badge — replaces the old amber urgency pill + "Get a Free Quote"
+   heading on every quote form. Drawn as an SVG outline with real HTML text
+   on top so it stays sharp and uses the site font. */
+.quote-badge {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  padding: 22px 28px 24px;
+  text-align: center;
+  margin: 0 auto 16px;
+}
+.quote-badge-shape { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.quote-badge-text { position: relative; }
+.quote-badge-kicker {
+  display: block;
   font-family: var(--font-head);
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: clamp(1rem, 4.6vw, 1.3rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+.quote-badge-sub { display: block; font-size: 0.86rem; color: var(--ink); margin-top: 2px; }
+.quote-badge-arrow { display: block; font-size: 1rem; color: var(--ink); margin-top: 6px; }
+.form-required-note {
+  font-size: 0.76rem;
+  font-style: italic;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--amber-dark);
-  background: #fdf3de;
-  padding: 5px 10px;
-  margin-bottom: 12px;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+  text-align: center;
 }
-.form-urgency i { color: var(--amber-dark); }
+.req { color: #d32f2f; }
+
 .form-reassure {
   display: flex;
   align-items: center;
@@ -332,36 +358,27 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   text-align: center;
 }
 .form-reassure i { color: var(--green); flex-shrink: 0; }
-.scroll-cue {
-  position: absolute;
-  bottom: 26px; left: 50%;
-  transform: translateX(-50%);
-  color: rgba(255,255,255,0.6);
-  font-size: 1.3rem;
-  animation: scrollCueBounce 1.8s infinite;
-}
-@keyframes scrollCueBounce {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, 8px); }
-}
+/* Hero isn't full-viewport in this treatment, so the scroll cue has nothing
+   below it to point at. */
+.scroll-cue { display: none; }
 
-/* Page header (non-home hero, shorter) */
+/* Page header (non-home hero, shorter) — same light/bordered treatment as
+   the home hero, left-aligned since a centred title reads badly under a
+   breadcrumb */
 .page-hero {
   padding: 150px 0 64px;
-  background: linear-gradient(160deg, var(--green-darker) 0%, var(--green) 100%);
-  color: var(--white);
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
 }
-.page-hero .eyebrow { background: rgba(255,255,255,0.14); color: var(--white); }
-.page-hero h1 { color: var(--white); margin-bottom: 12px; }
-.page-hero p.lead { color: rgba(255,255,255,0.88); max-width: 640px; font-size: 1.05rem; margin-bottom: 0; }
-.breadcrumb { font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-bottom: 14px; }
-.breadcrumb a { color: rgba(255,255,255,0.9); }
+.page-hero p.lead { max-width: 640px; font-size: 1.05rem; margin-bottom: 0; }
+.breadcrumb { font-size: 0.82rem; color: var(--ink-soft); margin-bottom: 14px; }
+.breadcrumb a { color: var(--green); font-weight: 600; }
 .breadcrumb a:hover { text-decoration: underline; }
 .page-hero-inner {
   display: grid;
-  grid-template-columns: 1.15fr 0.9fr;
-  gap: 48px;
-  align-items: center;
+  grid-template-columns: 2.05fr 1fr;
+  gap: 40px;
+  align-items: start;
 }
 .page-hero-copy p.lead { max-width: none; }
 
@@ -405,17 +422,17 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 
 /* Compliance / urgency banner */
 .urgency {
-  background: var(--ink);
-  color: var(--white);
+  background: var(--white);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 34px 36px;
   display: flex;
   gap: 26px;
   align-items: flex-start;
 }
-.urgency i { font-size: 1.6rem; color: var(--amber); flex-shrink: 0; margin-top: 4px; }
-.urgency h3 { color: var(--white); margin-bottom: 8px; }
-.urgency p { color: rgba(255,255,255,0.78); margin-bottom: 0; }
+.urgency i { font-size: 1.6rem; color: var(--amber-dark); flex-shrink: 0; margin-top: 4px; }
+.urgency h3 { margin-bottom: 8px; }
+.urgency p { margin-bottom: 0; }
 
 /* Cards / grid */
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -565,30 +582,16 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   align-items: stretch;
 }
 .coverage-map { height: 100%; min-height: 340px; }
-.coverage-list {
-  display: flex;
-  flex-direction: column;
-  background: var(--white);
-  border: 1px solid var(--border);
+/* Plain pin list, matching the redesign — no boxed cards, just an icon + name */
+.area-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 20px;
+  align-content: center;
   height: 100%;
 }
-.coverage-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 22px;
-  border-bottom: 1px solid var(--border);
-}
-.coverage-item:last-child { border-bottom: none; }
-.coverage-item .icon {
-  width: 40px;
-  height: 40px;
-  font-size: 1rem;
-  margin-bottom: 0;
-  flex-shrink: 0;
-}
-.coverage-item h3 { margin-bottom: 2px; font-size: 1.02rem; }
-.coverage-item p { margin-bottom: 0; font-size: 0.86rem; }
+.area-list li { display: flex; align-items: center; gap: 10px; font-size: 1rem; font-weight: 600; color: var(--ink); }
+.area-list i { color: var(--green); font-size: 0.95rem; }
 
 /* Bottom CTA band */
 .cta-band {
@@ -646,7 +649,6 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   .page-hero-inner { grid-template-columns: 1fr; gap: 30px; }
   .coverage-grid { grid-template-columns: 1fr; }
   .coverage-map { min-height: 260px; }
-  .coverage-item { padding: 14px 18px; }
 }
 @media (max-width: 560px) {
   .footer-grid { grid-template-columns: 1fr; }
@@ -654,5 +656,4 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   .hero { padding-top: 190px; }
   .page-hero { padding: 190px 0 48px; }
   .urgency { flex-direction: column; }
-  .hero-form-card { padding: 24px 20px; }
 }
