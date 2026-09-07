@@ -387,15 +387,12 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .confirm-hero .section-head.center { margin-bottom: 32px; }
 .confirm-icon {
   width: 64px; height: 64px;
-  background: rgba(255,255,255,0.14);
-  color: var(--amber);
+  background: var(--green-light);
+  color: var(--green);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.9rem;
   margin: 0 auto 20px;
 }
-.confirm-hero .eyebrow { background: rgba(255,255,255,0.14); color: var(--white); }
-.confirm-hero h1 { color: var(--white); }
-.confirm-hero p.lead { color: rgba(255,255,255,0.88); }
 
 /* How it works steps */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
