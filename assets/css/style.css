@@ -302,6 +302,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .hero-form-card .form-row select { padding: 11px 13px; }
 .hero-form-card .form-note { text-align: center; }
 .hero-form-card .form-note a { color: var(--green); font-weight: 600; }
+.form-card .form-note { text-align: center; }
 
 /* Quote form enticements: urgency badge + reassurance line, used on every quote form */
 .form-urgency {
