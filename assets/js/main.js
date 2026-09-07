@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
       toggle.setAttribute('aria-expanded', isOpen);
       if (icon) icon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
     });
-    nav.querySelectorAll('a').forEach(function (link) {
+    nav.querySelectorAll('a:not(.dropdown-toggle)').forEach(function (link) {
       link.addEventListener('click', function () {
         nav.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
