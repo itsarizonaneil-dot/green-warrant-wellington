@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // alike instead of a hardcoded domain that may not match where the form
   // was actually submitted from
   document.querySelectorAll('input[name="_next"]').forEach(function (input) {
-    input.value = window.location.origin + '/thank-you.html';
+    input.value = window.location.origin + '/thank-you';
   });
 
   // Header shadow on scroll
