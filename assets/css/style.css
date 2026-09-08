@@ -685,6 +685,6 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   .section { padding: 60px 0; }
   .hero { padding-top: 120px; }
   .hero-copy .cta-row { margin-top: 30px; }
-  .page-hero { padding: 190px 0 48px; }
+  .page-hero { padding: 110px 0 48px; }
   .urgency { flex-direction: column; }
 }
