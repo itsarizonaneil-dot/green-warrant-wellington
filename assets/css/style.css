@@ -676,14 +676,15 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   .page-hero-inner { grid-template-columns: 1fr; gap: 30px; }
   .coverage-grid { grid-template-columns: 1fr; }
   .coverage-map { min-height: 260px; }
-  .service-row { grid-template-columns: 1fr; gap: 22px; padding: 28px 0; }
+  .service-row, .service-row.reverse { grid-template-columns: 1fr; gap: 22px; padding: 28px 0; }
   .service-row.reverse .service-figure { order: 0; }
   .service-figure { aspect-ratio: 16 / 9; font-size: 2.4rem; }
 }
 @media (max-width: 560px) {
   .footer-grid { grid-template-columns: 1fr; }
   .section { padding: 60px 0; }
-  .hero { padding-top: 190px; }
+  .hero { padding-top: 120px; }
+  .hero-copy .cta-row { margin-top: 30px; }
   .page-hero { padding: 190px 0 48px; }
   .urgency { flex-direction: column; }
 }
