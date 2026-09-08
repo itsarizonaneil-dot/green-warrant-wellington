@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
           btn.removeAttribute('href');
           btn.setAttribute('aria-disabled', 'true');
           btn.classList.add('btn-closed');
-          btn.innerHTML = '<i class="fa-solid fa-clock" aria-hidden="true"></i> We’re currently closed — leave your details on the form and we’ll call you back';
+          btn.innerHTML = '<i class="fa-solid fa-clock" aria-hidden="true"></i> We’re currently closed — leave your details and we’ll call you back';
         }
       });
     };
