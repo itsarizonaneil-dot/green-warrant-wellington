@@ -261,6 +261,26 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .hero-copy { text-align: center; }
 .hero-copy h1 { font-weight: 800; letter-spacing: -0.015em; }
 .hero-copy .cta-row { justify-content: center; }
+.hours-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0 0;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+.hours-note i { color: var(--green); }
+
+/* Call button — greyed out and relabelled outside business hours by main.js */
+.btn-primary.btn-closed {
+  background: var(--border);
+  color: var(--ink-soft);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.btn-primary.btn-closed:hover { background: var(--border); transform: none; box-shadow: none; }
+
 .hero-media {
   margin: 26px 0 0;
   border: 1px solid var(--ink);
