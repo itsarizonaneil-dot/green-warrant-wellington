@@ -151,7 +151,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   align-items: center;
   gap: 10px;
   font-family: var(--font-head);
-  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-size: clamp(1.23rem, 2.2vw, 1.58rem);
   font-weight: 800;
   color: var(--green-darker);
   white-space: nowrap;
@@ -264,25 +264,6 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .hero-copy { text-align: center; }
 .hero-copy h1 { font-weight: 800; letter-spacing: -0.015em; font-size: clamp(1.83rem, 5vw, 2.93rem); padding: 12px 0; }
 .hero-copy .cta-row { justify-content: center; }
-.hours-note {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin: 10px 0 0;
-  font-size: 0.86rem;
-  color: var(--ink-soft);
-}
-.hours-note i { color: var(--green); }
-
-/* Call button — greyed out and relabelled outside business hours by main.js */
-.btn-primary.btn-closed {
-  background: var(--border);
-  color: var(--ink-soft);
-  cursor: not-allowed;
-  box-shadow: none;
-}
-.btn-primary.btn-closed:hover { background: var(--border); transform: none; box-shadow: none; }
 
 .hero-media {
   margin: 26px 0 0;
@@ -591,12 +572,12 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .form-row input, .form-row select, .form-row textarea {
   width: 100%;
   padding: 12px 14px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid #000000;
   border-radius: 0;
   font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--ink);
-  background: var(--green-pale);
+  background: var(--white);
 }
 .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
   outline: none;

@@ -56,63 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
     input.value = window.location.origin + '/thank-you';
   });
 
-  // Smart "Call" button — grey out and relabel every primary phone CTA
-  // outside business hours (Mon-Fri, 7:30am-6pm), nudging visitors toward
-  // the quote form instead. Uses Pacific/Auckland via Intl so it reflects
-  // real NZ hours regardless of the visitor's own timezone/device clock,
-  // and handles NZ daylight saving automatically.
-  var callBtns = document.querySelectorAll('a.btn.btn-primary[href^="tel:"]');
-  if (callBtns.length) {
-    var callBtnState = new WeakMap();
-
-    var isOpenNow = function () {
-      var parts = new Intl.DateTimeFormat('en-NZ', {
-        timeZone: 'Pacific/Auckland',
-        weekday: 'short',
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: false
-      }).formatToParts(new Date());
-      var weekday, hour, minute;
-      parts.forEach(function (p) {
-        if (p.type === 'weekday') weekday = p.value;
-        if (p.type === 'hour') hour = parseInt(p.value, 10);
-        if (p.type === 'minute') minute = parseInt(p.value, 10);
-      });
-      var isWeekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(weekday) !== -1;
-      var minutesNow = (hour % 24) * 60 + minute;
-      var opensAt = 7 * 60 + 30;  // 7:30am
-      var closesAt = 18 * 60;     // 6:00pm
-      return isWeekday && minutesNow >= opensAt && minutesNow < closesAt;
-    };
-
-    var applyCallBtnState = function () {
-      var open = isOpenNow();
-      callBtns.forEach(function (btn) {
-        if (!callBtnState.has(btn)) {
-          callBtnState.set(btn, { href: btn.getAttribute('href'), html: btn.innerHTML });
-        }
-        var original = callBtnState.get(btn);
-        if (open) {
-          btn.setAttribute('href', original.href);
-          btn.removeAttribute('aria-disabled');
-          btn.classList.remove('btn-closed');
-          btn.innerHTML = original.html;
-        } else {
-          btn.removeAttribute('href');
-          btn.setAttribute('aria-disabled', 'true');
-          btn.classList.add('btn-closed');
-          btn.innerHTML = '<i class="fa-solid fa-clock" aria-hidden="true"></i> We’re currently closed — leave your details and we’ll call you back';
-        }
-      });
-    };
-
-    applyCallBtnState();
-    // Re-check periodically in case a visitor keeps the tab open across
-    // the actual open/close transition.
-    setInterval(applyCallBtnState, 5 * 60 * 1000);
-  }
-
   // Header shadow on scroll
   var header = document.querySelector('.site-header');
   if (header) {
