@@ -262,7 +262,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   align-items: start;
 }
 .hero-copy { text-align: center; }
-.hero-copy h1 { font-weight: 800; letter-spacing: -0.015em; font-size: clamp(1.71rem, 5vw, 2.81rem); padding: 12px 0; }
+.hero-copy h1 { font-weight: 800; letter-spacing: -0.015em; font-size: clamp(1.38rem, 5vw, 2.48rem); padding: 12px 0; }
 .hero-copy .cta-row { justify-content: center; }
 
 .hero-media {
