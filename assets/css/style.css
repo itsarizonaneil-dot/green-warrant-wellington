@@ -72,7 +72,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   border-radius: 0;
   margin-bottom: 16px;
 }
-.section-head { max-width: 680px; margin: 0 0 44px; }
+.section-head { max-width: 680px; margin: 0 auto 44px; text-align: center; }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 
 /* Full-width running text — ported from the redesign, for sections where the
@@ -81,7 +81,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .prose p { font-size: 1.02rem; }
 /* Same size as body copy, still bold via the default h3 weight, so it reads
    as a heading without stepping up in size — ported from the redesign */
-.sub-head { font-size: 1.02rem; margin: 34px 0 14px; }
+.sub-head { font-size: 1.02rem; margin: 34px 0 14px; text-align: center; }
 .prose u { font-weight: 700; text-decoration-color: var(--green); text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
 
 /* Buttons */
@@ -262,7 +262,7 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   align-items: start;
 }
 .hero-copy { text-align: center; }
-.hero-copy h1 { font-weight: 800; letter-spacing: -0.015em; font-size: clamp(1.83rem, 5vw, 2.93rem); padding: 12px 0; }
+.hero-copy h1 { font-weight: 800; letter-spacing: -0.015em; font-size: clamp(1.71rem, 5vw, 2.81rem); padding: 12px 0; }
 .hero-copy .cta-row { justify-content: center; }
 
 .hero-media {
